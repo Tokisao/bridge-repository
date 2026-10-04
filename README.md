@@ -4,7 +4,7 @@
 **Group:** SE-2538
 **Topic Option:** B (Notifications)  
 **Repository URL:** https://github.com/your-username/assignment3-bridge  
-**Base Commit Hash:** `ba6f598`  
+**Base Commit Hash:** `29199d5`  
 
 ---
 
