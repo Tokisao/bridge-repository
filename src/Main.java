@@ -31,7 +31,7 @@ public class Main {
 
         Channel email = new EmailChannel();
         Channel sms = new SmsChannel();
-        
+        Channel push = new PushChannel();
         
 
         // T1: Reminder + Email
@@ -57,6 +57,15 @@ public class Main {
         // T5: runtime switch on the same object
         runSwitchCheck(id, title, msg, email, sms);
         
+         // T6: Reminder + Push (extension I3)
+        Notification t6 = new Reminder(id, title, msg, push);
+        check("T6", "Reminder + PushChannel", t6.execute(),
+                "PUSH NOTIFICATION App Alert N-101 ->\n Reminder: Meeting:Team sync at 3 PM");
+
+        // T7: UrgentAlert + Push (extension I3)
+        Notification t7 = new UrgentAlert(id, title, msg, push);
+        check("T7", "UrgentAlert + PushChannel", t7.execute(),
+                "PUSH NOTIFICATION App Alert N-101 ->\n [URGENT] Meeting:Team sync at 3 PM");
        
 
         System.out.println("SUMMARY: " + passCount + "/" + totalCount + " PASS");
