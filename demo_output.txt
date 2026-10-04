@@ -1,0 +1,17 @@
+T1 PASS | Reminder + EmailChannel | result=Email id:N-101
+ Subject: Reminder: Meeting
+Team sync at 3 PM
+T2 PASS | Reminder + SmsChannel | result=SMS N-101: Reminder: Meeting - Team sync at 3 PM
+T3 PASS | UrgentAlert + EmailChannel | result=Email id:N-101
+ Subject: [URGENT] Meeting
+Team sync at 3 PM
+T4 PASS | UrgentAlert + SmsChannel | result=SMS N-101: [URGENT] Meeting - Team sync at 3 PM
+T5 PASS | sameObject=true | stateUnchanged=true
+   before=Email id:N-101
+ Subject: Reminder: Meeting
+Team sync at 3 PM | after=SMS N-101: Reminder: Meeting - Team sync at 3 PM
+T6 PASS | Reminder + PushChannel | result=PUSH NOTIFICATION App Alert N-101 ->
+ Reminder: Meeting:Team sync at 3 PM
+T7 PASS | UrgentAlert + PushChannel | result=PUSH NOTIFICATION App Alert N-101 ->
+ [URGENT] Meeting:Team sync at 3 PM
+SUMMARY: 7/7 PASS
